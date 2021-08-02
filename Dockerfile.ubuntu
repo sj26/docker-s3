@@ -1,0 +1,8 @@
+FROM ubuntu
+
+RUN apt-get update && apt-get install --assume-yes --no-install-recommends ca-certificates inotify-tools && rm -rf /var/lib/apt/lists/*
+
+ADD s3-linux-amd64 /usr/local/bin/s3
+
+ENTRYPOINT []
+CMD ["/usr/local/bin/s3"]
